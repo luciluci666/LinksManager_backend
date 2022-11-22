@@ -11,11 +11,12 @@ import { AuthModule } from './auth/auth.module';
     UsersModule,
     MongooseModule.forRoot(
       // 'mongodb://127.0.0.1:27017/nest?directConnection=true',
-      'mongodb+srv://admin1011:linksmanageradmin@linksmanger.8usntxg.mongodb.net/users',
+      // 'mongodb+srv://admin1011:linksmanageradmin@linksmanger.8usntxg.mongodb.net/users',
+      process.env.DB_URL
     ),
     AuthModule,
   ],
   controllers: [AppController],
   providers: [AppService],
 })
-export class AppModule {}
+export class AppModule { }
